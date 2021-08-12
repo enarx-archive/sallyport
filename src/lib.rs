@@ -78,6 +78,7 @@
 #![deny(clippy::all)]
 #![cfg_attr(not(test), no_std)]
 
+pub mod boot;
 pub mod syscall;
 mod tests;
 pub mod untrusted;
