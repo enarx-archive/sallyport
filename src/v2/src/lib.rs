@@ -62,3 +62,29 @@ pub type Error = libc::c_int;
 
 /// Result type returned by functionality exposed by this crate.
 pub type Result<T> = core::result::Result<T, Error>;
+
+pub(crate) union SlicePtr<T> {
+    ptr: *const [T],
+    raw: (usize, usize),
+}
+
+impl<T> SlicePtr<T> {
+    pub(crate) fn len(ptr: *const [T]) -> usize {
+        // TODO: Read length from the fat slice pointer directly.
+        // Related:
+        // https://github.com/rust-lang/rust/issues/71146
+        // https://github.com/rust-lang/rust/issues/81513
+        unsafe { SlicePtr { ptr }.raw.1 }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn slice_len() {
+        let v = [1, 2, 3];
+        assert_eq!(SlicePtr::len(&v), 3)
+    }
+}
