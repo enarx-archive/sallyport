@@ -1,6 +1,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
-use libc::{c_int, sigaction};
+use libc::c_int;
+
+#[allow(non_camel_case_types)]
+pub type sigaction = [u64; 4];
 
 pub(super) const SIGRTMAX: c_int = 64;
 

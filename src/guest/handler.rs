@@ -10,11 +10,13 @@ use core::ptr::NonNull;
 use core::slice;
 
 use libc::{
-    c_int, c_uint, c_ulong, c_void, clockid_t, epoll_event, gid_t, off_t, pid_t, pollfd, sigaction,
-    sigset_t, size_t, stack_t, stat, timespec, uid_t, utsname, Ioctl, EBADFD, EFAULT, EINVAL,
-    ENOSYS, ENOTSUP, ENOTTY, FIONBIO, FIONREAD, STDERR_FILENO, STDIN_FILENO, STDOUT_FILENO,
-    TIOCGWINSZ,
+    c_int, c_uint, c_ulong, c_void, clockid_t, epoll_event, gid_t, off_t, pid_t, pollfd, sigset_t,
+    size_t, stack_t, stat, timespec, uid_t, utsname, Ioctl, EBADFD, EFAULT, EINVAL, ENOSYS,
+    ENOTSUP, ENOTTY, FIONBIO, FIONREAD, STDERR_FILENO, STDIN_FILENO, STDOUT_FILENO, TIOCGWINSZ,
 };
+
+#[allow(non_camel_case_types)]
+pub type sigaction = [u64; 4];
 
 /// Guest request handler.
 pub trait Handler: Platform {
