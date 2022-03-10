@@ -14,8 +14,9 @@ use core::slice;
 
 use libc::{
     c_int, c_uint, c_ulong, c_void, clockid_t, epoll_event, gid_t, off_t, pid_t, pollfd, sigset_t,
-    size_t, stack_t, stat, timespec, uid_t, utsname, Ioctl, EBADFD, EFAULT, EINVAL, ENOSYS,
-    ENOTSUP, ENOTTY, FIONBIO, FIONREAD, STDERR_FILENO, STDIN_FILENO, STDOUT_FILENO, TIOCGWINSZ,
+    size_t, stack_t, stat, timespec, uid_t, utsname, Ioctl, EAGAIN, EBADFD, EFAULT, EINVAL, ENOSYS,
+    ENOTSUP, ENOTTY, FIONBIO, FIONREAD, GRND_NONBLOCK, GRND_RANDOM, STDERR_FILENO, STDIN_FILENO,
+    STDOUT_FILENO, TIOCGWINSZ,
 };
 
 /// Guest request handler.
@@ -263,10 +264,32 @@ pub trait Handler {
         self.execute(syscall::Getpid)
     }
 
-    /// Executes [`getrandom`](https://man7.org/linux/man-pages/man2/getrandom.2.html) syscall akin to [`libc::getrandom`].
     #[inline]
     fn getrandom(&mut self, buf: &mut [u8], flags: c_uint) -> Result<size_t> {
-        self.execute(syscall::Getrandom { buf, flags })?
+        let flags = flags & !(GRND_NONBLOCK | GRND_RANDOM);
+
+        if flags != 0 {
+            return Err(EINVAL);
+        }
+
+        for (i, chunk) in buf.chunks_mut(8).enumerate() {
+            let mut el = 0u64;
+            loop {
+                if unsafe { core::arch::x86_64::_rdrand64_step(&mut el) } == 1 {
+                    chunk.copy_from_slice(&el.to_ne_bytes()[..chunk.len()]);
+                    break;
+                } else {
+                    if (flags & GRND_NONBLOCK) != 0 {
+                        return Err(EAGAIN);
+                    }
+                    if (flags & GRND_RANDOM) != 0 {
+                        return Ok(i * 8);
+                    }
+                }
+            }
+        }
+
+        Ok(buf.len())
     }
 
     /// Executes [`getsockname`](https://man7.org/linux/man-pages/man2/getsockname.2.html) syscall akin to [`libc::getsockname`].
