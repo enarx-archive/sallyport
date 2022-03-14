@@ -3,7 +3,7 @@
 use super::super::alloc;
 use super::types::{self, CommittedAlloc, StagedAlloc};
 use crate::guest::alloc::{Allocator, Collector, Commit};
-use crate::libc::c_long;
+use libc::c_long;
 use crate::Result;
 
 /// A generic syscall, which can be allocated within the block.
@@ -21,7 +21,7 @@ use crate::Result;
 /// use sallyport::guest::syscall::Alloc;
 /// use sallyport::Result;
 /// #
-/// # use sallyport::libc::{self, c_int, c_long, size_t};
+/// # use libc::{self, c_int, c_long, size_t};
 ///
 /// pub struct Read<'a> {
 ///    pub fd: c_int,

@@ -2,7 +2,7 @@
 
 use super::super::Stub;
 use crate::guest::alloc::Collector;
-use crate::libc::{
+use libc::{
     c_char, c_int, c_uint, gid_t, pid_t, sigset_t, size_t, stack_t, stat, uid_t, utsname, EAGAIN,
     EBADFD, EINVAL, ENOENT, GRND_NONBLOCK, GRND_RANDOM, STDERR_FILENO, STDIN_FILENO, STDOUT_FILENO,
     S_IFIFO,

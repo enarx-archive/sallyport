@@ -4,7 +4,7 @@
 
 use super::Call;
 use crate::guest::alloc::{Allocator, Collect, Collector, Commit, Committer, InRef};
-use crate::libc::ENOMEM;
+use libc::ENOMEM;
 use crate::{item, Result};
 
 use core::alloc::Layout;

@@ -5,7 +5,7 @@ use super::Alloc;
 use crate::guest::alloc::{Allocator, Collect, Collector, InOut, Output};
 use crate::guest::call::alloc::kind;
 use crate::guest::call::{MaybeAlloc, UnstagedMaybeAlloc};
-use crate::libc::{
+use libc::{
     self, c_int, c_long, SYS_ioctl, EBADFD, EINVAL, ENOTTY, FIONBIO, FIONREAD, STDERR_FILENO,
     STDIN_FILENO, STDOUT_FILENO, TIOCGWINSZ,
 };

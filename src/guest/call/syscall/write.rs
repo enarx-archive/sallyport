@@ -4,7 +4,7 @@ use super::super::types::Argv;
 use super::types::StagedBytesInput;
 use super::Alloc;
 use crate::guest::alloc::{Allocator, Collector, Input};
-use crate::libc::{c_int, c_long, size_t, SYS_write};
+use libc::{c_int, c_long, size_t, SYS_write};
 use crate::Result;
 
 pub struct Write<'a> {

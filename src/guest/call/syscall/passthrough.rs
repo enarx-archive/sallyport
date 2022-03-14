@@ -3,7 +3,7 @@
 use super::super::types::Argv;
 use super::Alloc;
 use crate::guest::alloc::{Allocator, Collector};
-use crate::libc::{
+use libc::{
     c_int, c_long, SYS_close, SYS_dup, SYS_dup2, SYS_dup3, SYS_epoll_create1, SYS_eventfd2,
     SYS_exit, SYS_exit_group, SYS_listen, SYS_socket, SYS_sync,
 };
@@ -23,7 +23,7 @@ use crate::Result;
 /// use sallyport::guest::syscall::PassthroughAlloc;
 /// use sallyport::Result;
 /// #
-/// # use sallyport::libc::{self, c_int, c_long};
+/// # use libc::{self, c_int, c_long};
 ///
 /// pub struct Exit {
 ///     pub status: c_int,

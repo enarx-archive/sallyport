@@ -4,7 +4,7 @@ use super::super::types::Argv;
 use super::types::{SockaddrInput, StagedBytesInput};
 use super::Alloc;
 use crate::guest::alloc::{Allocator, Collector, Commit, Committer, Input, Stage};
-use crate::libc::{c_int, c_long, size_t, SYS_sendto};
+use libc::{c_int, c_long, size_t, SYS_sendto};
 use crate::Result;
 
 pub struct Sendto<'a, T> {

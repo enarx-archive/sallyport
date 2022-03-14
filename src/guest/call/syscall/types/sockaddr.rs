@@ -3,7 +3,7 @@
 use crate::guest::alloc::{
     Allocator, Collect, Collector, Commit, Committer, InOut, Input, Output, Stage,
 };
-use crate::libc::{sockaddr_in, sockaddr_in6, sockaddr_storage, sockaddr_un, socklen_t, EOVERFLOW};
+use libc::{sockaddr_in, sockaddr_in6, sockaddr_storage, sockaddr_un, socklen_t, EOVERFLOW};
 use crate::Result;
 
 use core::alloc::Layout;

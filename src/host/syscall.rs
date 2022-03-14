@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use super::{deref, deref_aligned};
-use crate::libc::{
+use libc::{
     self, c_long, epoll_event, pollfd, sigset_t, sockaddr_storage, socklen_t, timespec, EFAULT,
 };
 use crate::{item, Result, NULL};

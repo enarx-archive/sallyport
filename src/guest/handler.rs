@@ -6,7 +6,7 @@ use super::syscall::types::{SockaddrInput, SockaddrOutput, SockoptInput};
 use super::{enarxcall, gdbcall, syscall, Call, Platform, ThreadLocalStorage, SIGRTMAX};
 use crate::item::enarxcall::sgx;
 use crate::item::syscall::sigaction;
-use crate::libc::{
+use libc::{
     c_int, c_uint, c_ulong, c_void, clockid_t, epoll_event, gid_t, mode_t, off_t, pid_t, pollfd,
     sigset_t, size_t, stack_t, stat, timespec, uid_t, utsname, Ioctl, SYS_accept, SYS_accept4,
     SYS_arch_prctl, SYS_bind, SYS_brk, SYS_clock_gettime, SYS_close, SYS_connect, SYS_dup,

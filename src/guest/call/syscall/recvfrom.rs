@@ -4,7 +4,7 @@ use super::super::types::Argv;
 use super::types::{CommittedSockaddrOutput, SockaddrOutput, StagedSockaddrOutput};
 use super::Alloc;
 use crate::guest::alloc::{Allocator, Collect, Collector, Output, Stage};
-use crate::libc::{c_int, c_long, size_t, SYS_recvfrom};
+use libc::{c_int, c_long, size_t, SYS_recvfrom};
 use crate::Result;
 
 pub struct Recvfrom<'a, T> {

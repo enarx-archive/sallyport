@@ -8,7 +8,7 @@ mod enarxcall;
 mod syscall;
 
 use crate::item::Item;
-use crate::libc::{EFAULT, EOVERFLOW};
+use libc::{EFAULT, EOVERFLOW};
 use crate::Result;
 
 use core::mem::{align_of, size_of};
@@ -104,7 +104,7 @@ mod tests {
     use crate::item::{gdbcall, Gdbcall, Syscall};
     use crate::NULL;
 
-    use crate::libc::*;
+    use libc::*;
     use std::fmt::Debug;
 
     struct DerefTestCase<T> {

@@ -2,7 +2,7 @@
 
 //! System call item definitions
 
-use crate::libc::c_int;
+use libc::c_int;
 
 use core::mem::size_of;
 

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use crate::guest::alloc::{Allocator, Input, Stage};
-use crate::libc::EOVERFLOW;
+use libc::EOVERFLOW;
 use crate::Result;
 
 use core::alloc::Layout;

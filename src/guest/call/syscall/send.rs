@@ -4,7 +4,7 @@ use super::super::types::Argv;
 use super::types::StagedBytesInput;
 use super::Alloc;
 use crate::guest::alloc::{Allocator, Collector, Input};
-use crate::libc::{c_int, c_long, size_t, SYS_sendto};
+use libc::{c_int, c_long, size_t, SYS_sendto};
 use crate::Result;
 
 pub struct Send<'a> {

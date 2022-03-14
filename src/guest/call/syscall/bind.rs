@@ -4,7 +4,7 @@ use super::super::types::Argv;
 use super::types::{SockaddrInput, StagedSockaddrInput};
 use super::Alloc;
 use crate::guest::alloc::{Allocator, Collector, Stage};
-use crate::libc::{c_int, c_long, SYS_bind};
+use libc::{c_int, c_long, SYS_bind};
 use crate::Result;
 
 pub struct Bind<T> {

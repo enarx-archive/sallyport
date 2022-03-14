@@ -16,7 +16,7 @@ pub use output::*;
 
 pub(super) use phase_alloc::*;
 
-use crate::libc::EOVERFLOW;
+use libc::EOVERFLOW;
 use crate::Result;
 
 use core::alloc::Layout;

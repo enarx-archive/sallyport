@@ -2,7 +2,7 @@
 
 use super::super::Alloc;
 use crate::guest::alloc::{Collect, Collector, Commit, Committer, InOutRef, InRef, Input, OutRef};
-use crate::libc::ENOSYS;
+use libc::ENOSYS;
 use crate::Result;
 
 /// Staged syscall, which holds allocated reference to syscall item within the block and [opaque staged value](Alloc::Staged).

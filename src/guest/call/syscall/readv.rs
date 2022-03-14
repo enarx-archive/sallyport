@@ -3,7 +3,7 @@
 use super::super::types::Argv;
 use super::{iov_len, Alloc};
 use crate::guest::alloc::{Allocator, Collector, CommitPassthrough, OutRef};
-use crate::libc::{c_int, c_long, size_t, SYS_read};
+use libc::{c_int, c_long, size_t, SYS_read};
 use crate::Result;
 
 pub struct Readv<T> {

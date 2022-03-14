@@ -11,7 +11,7 @@ use std::thread;
 
 use sallyport::guest::{Handler, Platform, ThreadLocalStorage};
 use sallyport::item::Block;
-use sallyport::libc::{c_int, c_ulong, c_void, off_t, size_t, EINVAL, ENOSYS};
+use libc::{c_int, c_ulong, c_void, off_t, size_t, EINVAL, ENOSYS};
 use sallyport::util::ptr;
 use sallyport::{host, Result};
 

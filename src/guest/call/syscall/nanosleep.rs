@@ -3,7 +3,7 @@
 use super::super::types::Argv;
 use super::Alloc;
 use crate::guest::alloc::{Allocator, Collect, Collector, Commit, Committer, InOut, Input, Output};
-use crate::libc::{c_long, timespec, SYS_nanosleep, EINTR};
+use libc::{c_long, timespec, SYS_nanosleep, EINTR};
 use crate::{Result, NULL};
 
 pub struct Nanosleep<'a> {

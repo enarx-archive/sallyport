@@ -5,7 +5,7 @@ use super::super::types::Argv;
 use super::super::{MaybeAlloc, UnstagedMaybeAlloc};
 use super::Alloc;
 use crate::guest::alloc::{Allocator, Collector, Input};
-use crate::libc::{c_int, c_long, mode_t, SYS_open, EACCES, O_CLOEXEC, O_RDONLY};
+use libc::{c_int, c_long, mode_t, SYS_open, EACCES, O_CLOEXEC, O_RDONLY};
 use crate::Result;
 
 pub struct Open<'a> {

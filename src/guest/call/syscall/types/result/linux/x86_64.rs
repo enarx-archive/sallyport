@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
-use crate::libc::{c_int, EOVERFLOW};
+use libc::{c_int, EOVERFLOW};
 
 use core::marker::PhantomData;
 
@@ -66,7 +66,7 @@ impl From<Result<isize>> for crate::Result<usize> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::libc::{self, EPERM, F_GETFD};
+    use libc::{self, EPERM, F_GETFD};
 
     #[test]
     fn result() {

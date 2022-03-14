@@ -4,7 +4,7 @@ use super::super::types::Argv;
 use super::types::{CommittedSockaddrOutput, SockaddrOutput, StagedSockaddrOutput};
 use super::Alloc;
 use crate::guest::alloc::{Allocator, Collect, Collector, Stage};
-use crate::libc::{c_int, c_long, SYS_accept};
+use libc::{c_int, c_long, SYS_accept};
 use crate::{Result, NULL};
 
 pub struct Accept<T> {

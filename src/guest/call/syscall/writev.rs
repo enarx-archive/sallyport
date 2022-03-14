@@ -3,7 +3,7 @@
 use super::super::types::Argv;
 use super::{iov_len, Alloc};
 use crate::guest::alloc::{Allocator, Collector, Commit, Committer, InRef};
-use crate::libc::{c_int, c_long, size_t, SYS_write};
+use libc::{c_int, c_long, size_t, SYS_write};
 use crate::Result;
 
 pub struct Writev<T> {

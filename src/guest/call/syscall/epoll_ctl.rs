@@ -3,7 +3,7 @@
 use super::super::types::Argv;
 use super::Alloc;
 use crate::guest::alloc::{Allocator, Collector, Input};
-use crate::libc::{c_int, c_long, epoll_event, SYS_epoll_ctl};
+use libc::{c_int, c_long, epoll_event, SYS_epoll_ctl};
 use crate::Result;
 
 pub struct EpollCtl<'a> {

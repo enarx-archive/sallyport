@@ -7,7 +7,7 @@ use crate::guest::syscall::types::SockaddrOutput;
 use crate::guest::Call;
 use crate::item;
 use crate::item::syscall;
-use crate::libc::{socklen_t, SYS_exit, SYS_recvfrom, AF_INET, ENOSYS};
+use libc::{socklen_t, SYS_exit, SYS_recvfrom, AF_INET, ENOSYS};
 use crate::NULL;
 
 use core::mem::size_of;

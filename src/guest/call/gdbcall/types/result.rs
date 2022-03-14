@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
-use crate::libc::{c_int, EOVERFLOW};
+use libc::{c_int, EOVERFLOW};
 use crate::NULL;
 
 use core::marker::PhantomData;

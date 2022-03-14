@@ -2,8 +2,8 @@
 
 use super::{run_test, write_tcp};
 
-use sallyport::libc;
-use sallyport::libc::{
+use libc;
+use libc::{
     c_int, in_addr, iovec, pollfd, sockaddr, sockaddr_in, timespec, timeval, SYS_accept,
     SYS_accept4, SYS_bind, SYS_close, SYS_fcntl, SYS_fstat, SYS_getrandom, SYS_getsockname,
     SYS_listen, SYS_nanosleep, SYS_open, SYS_read, SYS_readlink, SYS_readv, SYS_recvfrom,

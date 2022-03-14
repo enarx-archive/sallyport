@@ -4,7 +4,7 @@ use super::super::types::Argv;
 use super::types::SockaddrInput;
 use super::Alloc;
 use crate::guest::alloc::{Allocator, Collector, Input, Stage};
-use crate::libc::{c_int, c_long, SYS_connect};
+use libc::{c_int, c_long, SYS_connect};
 use crate::Result;
 
 pub struct Connect<T> {
