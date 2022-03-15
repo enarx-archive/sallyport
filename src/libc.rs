@@ -279,3 +279,62 @@ pub const SYS_uname: c_long = 63;
 pub const SYS_write: c_long = 1;
 pub const SYS_writev: c_long = 20;
 pub const TIOCGWINSZ: Ioctl = 0x5413;
+
+#[cfg(test)]
+mod tests {
+
+    #[test]
+    fn test_syscalls() {
+        assert_eq!(libc::SYS_accept, super::SYS_accept, "SYS_accept");
+        assert_eq!(libc::SYS_accept4, super::SYS_accept4, "SYS_accept4");
+        assert_eq!(libc::SYS_arch_prctl, super::SYS_arch_prctl, "SYS_arch_prctl");
+        assert_eq!(libc::SYS_bind, super::SYS_bind, "SYS_bind");
+        assert_eq!(libc::SYS_brk, super::SYS_brk, "SYS_brk");
+        assert_eq!(libc::SYS_clock_gettime, super::SYS_clock_gettime, "SYS_clock_gettime");
+        assert_eq!(libc::SYS_close, super::SYS_close, "SYS_close");
+        assert_eq!(libc::SYS_connect, super::SYS_connect, "SYS_connect");
+        assert_eq!(libc::SYS_dup, super::SYS_dup, "SYS_dup");
+        assert_eq!(libc::SYS_dup2, super::SYS_dup2, "SYS_dup2");
+        assert_eq!(libc::SYS_dup3, super::SYS_dup3, "SYS_dup3");
+        assert_eq!(libc::SYS_epoll_create1, super::SYS_epoll_create1, "SYS_epoll_create1");
+        assert_eq!(libc::SYS_epoll_ctl, super::SYS_epoll_ctl, "SYS_epoll_ctl");
+        assert_eq!(libc::SYS_epoll_pwait, super::SYS_epoll_pwait, "SYS_epoll_pwait");
+        assert_eq!(libc::SYS_epoll_wait, super::SYS_epoll_wait, "SYS_epoll_wait");
+        assert_eq!(libc::SYS_eventfd2, super::SYS_eventfd2, "SYS_eventfd2");
+        assert_eq!(libc::SYS_exit, super::SYS_exit, "SYS_exit");
+        assert_eq!(libc::SYS_exit_group, super::SYS_exit_group, "SYS_exit_group");
+        assert_eq!(libc::SYS_fcntl, super::SYS_fcntl, "SYS_fcntl");
+        assert_eq!(libc::SYS_fstat, super::SYS_fstat, "SYS_fstat");
+        assert_eq!(libc::SYS_getegid, super::SYS_getegid, "SYS_getegid");
+        assert_eq!(libc::SYS_geteuid, super::SYS_geteuid, "SYS_geteuid");
+        assert_eq!(libc::SYS_getpid, super::SYS_getpid, "SYS_getpid");
+        assert_eq!(libc::SYS_getuid, super::SYS_getuid, "SYS_getuid");
+        assert_eq!(libc::SYS_getrandom, super::SYS_getrandom, "SYS_getrandom");
+        assert_eq!(libc::SYS_getsockname, super::SYS_getsockname, "SYS_getsockname");
+        assert_eq!(libc::SYS_ioctl, super::SYS_ioctl, "SYS_ioctl");
+        assert_eq!(libc::SYS_listen, super::SYS_listen, "SYS_listen");
+        assert_eq!(libc::SYS_madvise, super::SYS_madvise, "SYS_madvise");
+        assert_eq!(libc::SYS_mmap, super::SYS_mmap, "SYS_mmap");
+        assert_eq!(libc::SYS_mprotect, super::SYS_mprotect, "SYS_mprotect");
+        assert_eq!(libc::SYS_munmap, super::SYS_munmap, "SYS_munmap");
+        assert_eq!(libc::SYS_nanosleep, super::SYS_nanosleep, "SYS_nanosleep");
+        assert_eq!(libc::SYS_open, super::SYS_open, "SYS_open");
+        assert_eq!(libc::SYS_poll, super::SYS_poll, "SYS_poll");
+        assert_eq!(libc::SYS_read, super::SYS_read, "SYS_read");
+        assert_eq!(libc::SYS_readlink, super::SYS_readlink, "SYS_readlink");
+        assert_eq!(libc::SYS_readv, super::SYS_readv, "SYS_readv");
+        assert_eq!(libc::SYS_recvfrom, super::SYS_recvfrom, "SYS_recvfrom");
+        assert_eq!(libc::SYS_rt_sigaction, super::SYS_rt_sigaction, "SYS_rt_sigaction");
+        assert_eq!(libc::SYS_rt_sigprocmask, super::SYS_rt_sigprocmask, "SYS_rt_sigprocmask");
+        assert_eq!(libc::SYS_set_tid_address, super::SYS_set_tid_address, "SYS_set_tid_address");
+        assert_eq!(libc::SYS_sendto, super::SYS_sendto, "SYS_sendto");
+        assert_eq!(libc::SYS_setsockopt, super::SYS_setsockopt, "SYS_setsockopt");
+        assert_eq!(libc::SYS_sigaltstack, super::SYS_sigaltstack, "SYS_sigaltstack");
+        assert_eq!(libc::SYS_socket, super::SYS_socket, "SYS_socket");
+        assert_eq!(libc::SYS_sync, super::SYS_sync, "SYS_sync");
+        assert_eq!(libc::SYS_uname, super::SYS_uname, "SYS_uname");
+        assert_eq!(libc::SYS_write, super::SYS_write, "SYS_write");
+        assert_eq!(libc::SYS_writev, super::SYS_writev, "SYS_writev");
+        //assert_eq!(libc::TIOCGWINSZ, super::TIOCGWINSZ, "TIOCGWINSZ");
+    }
+}
